@@ -1,153 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youssef El Hajj — AAA Cinematic Scroll</title>
-  <meta name="description" content="Cinematic 3D Portfolio">
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <link rel="stylesheet" href="styles.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef El Hajj — Software Engineer</title>
+    <meta name="description" content="Software Engineer & AI Developer building at the intersection of systems programming and artificial intelligence.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
+    <!-- Premium Fonts: Inter for UI/Body, JetBrains Mono for Code/Tech elements -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ═══ Fixed Three.js Canvas ═══ -->
-  <div id="canvas-container">
-    <canvas id="three-canvas"></canvas>
-  </div>
+    <!-- Subtle film grain noise overlay for premium texture -->
+    <div class="noise-overlay"></div>
 
-  <!-- ═══ Fixed HUD ═══ -->
-  <header class="hud" aria-label="Navigation">
-    <div class="hud-logo">YOUSSEF</div>
-    <nav class="hud-nav">
-      <a href="mailto:youssefelhajj@example.com" class="hud-cta">LET'S TALK</a>
+    <nav class="nav">
+        <a href="#" class="nav-logo">YOUSSEF<span class="accent">.</span>EL_HAJJ</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#ventures">Ventures</a>
+            <a href="#contact" class="btn-outline">Let's Talk</a>
+        </div>
     </nav>
-  </header>
 
-  <!-- ═══ Progress Bar ═══ -->
-  <div class="progress-track" aria-hidden="true">
-    <div class="progress-fill" id="progress-fill"></div>
-  </div>
+    <main id="main">
+        <!-- ===================== HERO ===================== -->
+        <section class="hero" id="hero">
+            <div class="container hero-inner">
+                <p class="eyebrow">$ init --user</p>
+                <!-- data-text drives the scramble animation -->
+                <h1 class="hero-name" id="heroName" data-text="YOUSSEF EL HAJJ">YOUSSEF EL HAJJ</h1>
+                <p class="hero-subtitle" id="heroSubtitle" data-text="Software Engineer & AI Developer">Software Engineer & AI Developer</p>
+                
+                <p class="hero-tagline">
+                    Building robust, high-performance systems. From low-level C architecture and functional OCaml to scalable AI infrastructure and modern web platforms. 
+                </p>
 
-  <!-- ═══ Overlays ═══ -->
-  <div class="overlay-layer" aria-live="polite">
+                <div class="hero-actions">
+                    <a href="#work" class="btn btn-primary">Explore Work</a>
+                    <a href="#contact" class="btn btn-ghost">Contact Me</a>
+                </div>
 
-    <!-- WP1: Intro / Skyline -->
-    <section class="waypoint-overlay" id="wp1">
-      <h1 class="intro-title" id="intro-title">YOUSSEF EL HAJJ</h1>
-      <p class="intro-sub">SCROLL TO INITIATE</p>
-    </section>
+                <div class="hero-links">
+                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ GITHUB ]</a>
+                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ LINKEDIN ]</a>
+                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ TWITTER ]</a>
+                </div>
+            </div>
+            <div class="scroll-cue">
+                <span>SCROLL</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-    <!-- WP2: The Balcony -->
-    <section class="waypoint-overlay" id="wp2">
-      <span class="wp-number">01 / BALCONY</span>
-      <h2 class="wp-section-title">Systems & Algorithms</h2>
-      <button class="ui-button open-modal-btn" data-modal="info-modal">[i] Architecture Info</button>
-    </section>
+        <!-- ===================== ABOUT & TECH STACK ===================== -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow" data-scramble="$ cat bio.md">$ cat bio.md</p>
+                    <h2>System Architecture & Logic</h2>
+                </div>
 
-    <!-- WP3: The Bicycle -->
-    <section class="waypoint-overlay" id="wp3">
-      <span class="wp-number">02 / MOMENTUM</span>
-      <h2 class="wp-section-title">Relentless Drive</h2>
-      <p class="wp-body-text">Athlete & Developer. Pushing physical and digital limits.</p>
-    </section>
+                <div class="about-grid">
+                    <div class="about-bio reveal">
+                        <p>
+                            I am a software engineer focused on building systems that scale and algorithms that solve real problems. I thrive at the intersection of rigid, low-level systems programming and dynamic, high-level AI development.
+                        </p>
+                        <p>
+                            Whether I am optimizing memory in C, writing pure functions in OCaml, or architecting backend services for mobile platforms, my philosophy remains the same: build it clean, make it fast, and ensure it rarely breaks.
+                        </p>
+                        
+                        <div class="stack-list">
+                            <span class="stack-chip">C / C++</span>
+                            <span class="stack-chip">OCaml</span>
+                            <span class="stack-chip">Python</span>
+                            <span class="stack-chip">TypeScript</span>
+                            <span class="stack-chip">WebGL / GLSL</span>
+                            <span class="stack-chip">React / Next.js</span>
+                            <span class="stack-chip">PostgreSQL</span>
+                            <span class="stack-chip">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- WP4: Antenna -->
-    <section class="waypoint-overlay" id="wp4">
-      <span class="wp-number">03 / STACK</span>
-      <h2 class="wp-section-title">Core Infrastructure</h2>
-      <div class="stack-list">
-        <span>C</span> • <span>OCaml</span> • <span>WebGL</span> • <span>AI</span>
-      </div>
-    </section>
+        <!-- ===================== WORK ===================== -->
+        <section class="section" id="work">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow" data-scramble="$ ls ./projects --detailed">$ ls ./projects --detailed</p>
+                    <h2>Selected Work</h2>
+                </div>
 
-    <!-- WP5: Amphitheater -->
-    <section class="waypoint-overlay" id="wp5">
-      <span class="wp-number">04 / VENTURES</span>
-      <h2 class="wp-section-title">Incubation</h2>
-      <button class="ui-button open-modal-btn" data-modal="projects-modal">[Open Projects]</button>
-    </section>
+                <div class="work-grid">
+                    <article class="project-card reveal">
+                        <div class="project-thumb">
+                            <span>Sys</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-meta">SYSTEMS PROGRAMMING</p>
+                            <h3 class="project-title">Custom Memory Allocator</h3>
+                            <p class="project-desc">A highly optimized custom `malloc` and `free` implementation in C, featuring segregated free lists and thread-safe operations.</p>
+                            <div class="project-tags">
+                                <span class="tag">C</span><span class="tag">POSIX</span><span class="tag">Valgrind</span>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- WP6: Dawn -->
-    <section class="waypoint-overlay" id="wp6">
-      <span class="wp-number">05 / DAWN</span>
-      <h2 class="wp-section-title">Time to Fly</h2>
-      <a href="mailto:youssefelhajj@example.com" class="ui-button">Initiate Contact</a>
-    </section>
+                    <article class="project-card reveal">
+                        <div class="project-thumb">
+                            <span>λ</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-meta">FUNCTIONAL</p>
+                            <h3 class="project-title">OCaml Compiler Toolchain</h3>
+                            <p class="project-desc">A lightweight compiler front-end written in pure OCaml, translating a subset of ML into optimized intermediate representation.</p>
+                            <div class="project-tags">
+                                <span class="tag">OCaml</span><span class="tag">Menhir</span><span class="tag">LLVM</span>
+                            </div>
+                        </div>
+                    </article>
 
-  </div>
+                    <article class="project-card reveal">
+                        <div class="project-thumb">
+                            <span>AI</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-meta">INFRASTRUCTURE</p>
+                            <h3 class="project-title">Axiom Beta</h3>
+                            <p class="project-desc">A mobile lifestyle application leveraging real-time databases and closed internal beta testing pipelines on Google Play.</p>
+                            <div class="project-tags">
+                                <span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Node.js</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-  <!-- ═══ GLOBAL MODALS ═══ -->
-  
-  <!-- Info Modal (WP2) -->
-  <div class="modal-container" id="info-modal">
-    <div class="modal-bg close-modal-btn"></div>
-    <div class="modal-content">
-      <button class="modal-close close-modal-btn">✕</button>
-      <h2 class="modal-title">Engineering Philosophy</h2>
-      <p class="modal-text">High-performance systems architecture built with C and functional OCaml. Focus on low-level optimization and scalable AI infrastructure.</p>
-    </div>
-  </div>
+        <!-- ===================== VENTURES ===================== -->
+        <section class="section" id="ventures">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow" data-scramble="$ ./ventures.sh">$ ./ventures.sh</p>
+                    <h2>Ventures & Startups</h2>
+                </div>
 
-  <!-- Projects Modal (WP5) -->
-  <div class="modal-container" id="projects-modal">
-    <div class="modal-bg close-modal-btn"></div>
-    <div class="modal-content large-modal">
-      <button class="modal-close close-modal-btn">✕</button>
-      
-      <div class="project-split">
-        <!-- Swipply -->
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Swipply</h3>
-            <span class="project-role">Solo Founder & Lead Developer</span>
-          </div>
-          <p class="modal-text">Strictly freemium business model framework. Backend feature architecture optimized for rapid scaling and solo pitch presentation infrastructure.</p>
-          <div class="media-placeholder video-placeholder">
-            <span>[16:9 Pitch Video Placeholder]</span>
-          </div>
+                <div class="ventures-grid">
+                    <div class="venture-card reveal">
+                        <div class="venture-top">
+                            <h3 class="venture-title">Swipply</h3>
+                            <span class="stage-tag">ACTIVE</span>
+                        </div>
+                        <p class="venture-desc">
+                            Solo Founder & Lead Developer. A strictly freemium business model framework with a backend feature architecture optimized for rapid scaling. Built with solo pitch presentation infrastructure in mind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CONTACT ===================== -->
+        <section class="section" id="contact">
+            <div class="container contact-inner">
+                <div class="section-head reveal">
+                    <p class="eyebrow" data-scramble="$ ping -c 4 youssef">$ ping -c 4 youssef</p>
+                    <h2>Initiate Contact</h2>
+                    <p>Open to deep technical challenges, systems architecture roles, and visionary AI projects.</p>
+                </div>
+                <a class="contact-email reveal" href="mailto:youssefelhajj@example.com">youssefelhajj@example.com</a>
+
+                <div class="hero-links reveal" style="margin-top:2.5rem;">
+                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ GITHUB ]</a>
+                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ LINKEDIN ]</a>
+                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ TWITTER ]</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <span>© <span id="year"></span> Youssef El Hajj. Built with precision.</span>
+            <span>Paris, France</span>
         </div>
+    </footer>
 
-        <div class="vertical-divider"></div>
-
-        <!-- Axiom -->
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Axiom</h3>
-            <span class="project-role">Mobile Lifestyle Application</span>
-          </div>
-          <p class="modal-text">High-fidelity UI/UX specifications, real-time database requirements, and a closed internal beta testing pipeline via Google Play Console.</p>
-          <div class="media-placeholder mobile-placeholder">
-            <div class="mobile-mock"><span>UI Mock</span></div>
-            <div class="mobile-mock"><span>UI Mock</span></div>
-          </div>
-        </div>
-      </div>
+    <div class="status-widget">
+        <span class="status-dot"></span>
+        <span>SYSTEM ONLINE · <span id="clock"></span></span>
     </div>
-  </div>
 
-  <!-- ═══ Scroll Spacer ═══ -->
-  <div class="scroll-content" id="scroll-content"></div>
+    <!-- Scramble Text Animation & Scroll Logic -->
+    <script>
+        (function () {
+            "use strict";
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  <!-- ═══ Scripts ═══ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+            /* ---------- Scramble Text Effect ---------- */
+            function ScrambleText(el) {
+                this.el = el;
+                // High-tech character set for the scramble
+                this.chars = '!<>-_\\/[]{}=+*^?#01XλΣ◆';
+            }
+            ScrambleText.prototype.randomChar = function () {
+                return this.chars[(Math.random() * this.chars.length) | 0];
+            };
+            ScrambleText.prototype.play = function (finalText, opts) {
+                opts = opts || {};
+                const duration = opts.duration || 2500;
+                const minReveal = opts.minReveal || 800;
+                const self = this;
 
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-    }
-  }
-  </script>
+                if (reduceMotion) {
+                    self.el.textContent = finalText;
+                    return Promise.resolve();
+                }
 
-  <script type="module" src="js/main.js"></script>
+                return new Promise(function (resolve) {
+                    const chars = finalText.split('');
+                    const reveals = chars.map(() => minReveal + Math.random() * (duration - minReveal));
+                    const start = performance.now();
+
+                    function frame(now) {
+                        const t = now - start;
+                        let done = true;
+                        let out = '';
+                        for (let i = 0; i < chars.length; i++) {
+                            const ch = chars[i];
+                            if (ch === ' ') { out += ' '; continue; }
+                            if (t >= reveals[i]) {
+                                out += ch;
+                            } else {
+                                done = false;
+                                out += '<span class="scramble-char">' + self.randomChar() + '</span>';
+                            }
+                        }
+                        self.el.innerHTML = out;
+                        if (!done) {
+                            requestAnimationFrame(frame);
+                        } else {
+                            resolve();
+                        }
+                    }
+                    requestAnimationFrame(frame);
+                });
+            };
+
+            /* Trigger Hero Scramble on Load */
+            window.addEventListener('DOMContentLoaded', function () {
+                const nameEl = document.getElementById('heroName');
+                const subEl = document.getElementById('heroSubtitle');
+                
+                if (nameEl) {
+                    const nameScrambler = new ScrambleText(nameEl);
+                    nameScrambler.play(nameEl.getAttribute('data-text'), { duration: 2800, minReveal: 1000 });
+                }
+                
+                if (subEl) {
+                    const subScrambler = new ScrambleText(subEl);
+                    setTimeout(() => {
+                        subScrambler.play(subEl.getAttribute('data-text'), { duration: 2000, minReveal: 600 });
+                    }, 400);
+                }
+            });
+
+            /* Scroll-triggered scramble for section eyebrows */
+            const eyebrows = document.querySelectorAll('[data-scramble]');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const scrambler = new ScrambleText(el);
+                            scrambler.play(el.getAttribute('data-scramble'), { duration: 1200, minReveal: 300 });
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.8 });
+                eyebrows.forEach(el => observer.observe(el));
+            }
+
+            /* Standard Fade-Up Reveal on Scroll */
+            const revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                revealEls.forEach(el => revealObserver.observe(el));
+            } else {
+                revealEls.forEach(el => el.classList.add('is-visible'));
+            }
+
+            /* Nav blur effect on scroll */
+            const nav = document.querySelector('.nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            }, { passive: true });
+
+            /* Clock & Year */
+            document.getElementById('year').textContent = new Date().getFullYear();
+            function updateClock() {
+                const el = document.getElementById('clock');
+                if (el) el.textContent = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        })();
+    </script>
 </body>
 </html>
