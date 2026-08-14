@@ -3,137 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youssef El Hajj — Software Engineer & AI Developer</title>
-  <meta name="description" content="Youssef El Hajj is a Software Engineer, AI Developer, and entrepreneur.">
-  
+  <title>Youssef El Hajj — AAA Cinematic Scroll</title>
+  <meta name="description" content="Cinematic 3D Portfolio">
+
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav class="top-nav">
-    <div class="logo">YOUSSEF</div>
-    <div class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#work" class="nav-link">Work</a>
-      <a href="mailto:youssefelhajj@example.com" class="btn-primary">LET'S TALK</a>
-    </div>
-  </nav>
+  <!-- ═══ Fixed Three.js Canvas ═══ -->
+  <div id="canvas-container">
+    <canvas id="three-canvas"></canvas>
+  </div>
 
-  <!-- Hero Section -->
-  <header id="hero">
-    
-    <!-- Vertical Matrix Text Streams (Background Accents) -->
-    <div class="matrix-streams" id="matrix-streams" aria-hidden="true">
-      <div class="stream stream-1"></div>
-      <div class="stream stream-2"></div>
-      <div class="stream stream-3"></div>
-      <div class="stream stream-4"></div>
-    </div>
-
-    <!-- WebGL Container -->
-    <div id="webgl-container"></div>
-
-    <!-- UI Overlay matching Morgan Mockup -->
-    <div class="hero-content-wrapper">
-      <div class="hero-text-block">
-        <p class="greeting">Hello, I'm</p>
-        <h1 class="hero-name">YOUSSEF</h1>
-        <p class="hero-title">
-          Software & AI Developer, and Athlete.<br>
-          Creating with precision.
-        </p>
-        <a href="mailto:youssefelhajj@example.com" class="email-link">youssef@email.com</a>
-      </div>
-    </div>
-
-    <!-- Hidden SEO Image -->
-    <div class="seo-images" aria-hidden="true">
-      <img src="assets/images/youssef-elhajj-portrait-full.jpg" alt="Typographic portrait of Youssef El Hajj">
-    </div>
-    
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="line"></div>
-    </div>
+  <!-- ═══ Fixed HUD ═══ -->
+  <header class="hud" aria-label="Navigation">
+    <div class="hud-logo">YOUSSEF</div>
+    <nav class="hud-nav">
+      <a href="mailto:youssefelhajj@example.com" class="hud-cta">LET'S TALK</a>
+    </nav>
   </header>
 
-  <!-- Main Content Flow -->
-  <main class="page-content">
-    
-    <!-- About Section -->
-    <section id="about" class="content-section">
-      <div class="section-container">
-        <h2 class="section-title">01 / About</h2>
-        <div class="section-grid">
-          <div class="section-text-large">
-            I engineer high-performance software systems and intelligent AI solutions, pushing the boundaries of what's possible on the web and beyond.
-          </div>
-          <div class="section-text-small">
-            <p>This is a placeholder for your detailed bio. You can discuss your background, your philosophy as a developer, and your dual passion as an athlete.</p>
-            <p>The design maintains the strict minimalist aesthetic established in the hero section, utilizing high-contrast typography and generous whitespace.</p>
-          </div>
-        </div>
+  <!-- ═══ Progress Bar ═══ -->
+  <div class="progress-track" aria-hidden="true">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <!-- ═══ Overlays ═══ -->
+  <div class="overlay-layer" aria-live="polite">
+
+    <!-- WP1: Intro / Skyline -->
+    <section class="waypoint-overlay" id="wp1">
+      <h1 class="intro-title" id="intro-title">YOUSSEF EL HAJJ</h1>
+      <p class="intro-sub">SCROLL TO INITIATE</p>
+    </section>
+
+    <!-- WP2: The Balcony -->
+    <section class="waypoint-overlay" id="wp2">
+      <span class="wp-number">01 / BALCONY</span>
+      <h2 class="wp-section-title">Systems & Algorithms</h2>
+      <button class="ui-button open-modal-btn" data-modal="info-modal">[i] Architecture Info</button>
+    </section>
+
+    <!-- WP3: The Bicycle -->
+    <section class="waypoint-overlay" id="wp3">
+      <span class="wp-number">02 / MOMENTUM</span>
+      <h2 class="wp-section-title">Relentless Drive</h2>
+      <p class="wp-body-text">Athlete & Developer. Pushing physical and digital limits.</p>
+    </section>
+
+    <!-- WP4: Antenna -->
+    <section class="waypoint-overlay" id="wp4">
+      <span class="wp-number">03 / STACK</span>
+      <h2 class="wp-section-title">Core Infrastructure</h2>
+      <div class="stack-list">
+        <span>C</span> • <span>OCaml</span> • <span>WebGL</span> • <span>AI</span>
       </div>
     </section>
 
-    <!-- Work Section -->
-    <section id="work" class="content-section alternate-bg">
-      <div class="section-container">
-        <h2 class="section-title">02 / Selected Work</h2>
-        <div class="projects-grid">
-          
-          <!-- Project Item 1 -->
-          <article class="project-card">
-            <div class="project-image-placeholder">Project Image</div>
-            <div class="project-info">
-              <h3>Project Title</h3>
-              <p>A brief description of the project, the technologies used, and the impact it had.</p>
-              <a href="#" class="project-link">View Project →</a>
-            </div>
-          </article>
-          
-          <!-- Project Item 2 -->
-          <article class="project-card">
-            <div class="project-image-placeholder">Project Image</div>
-            <div class="project-info">
-              <h3>Project Title</h3>
-              <p>A brief description of the project, the technologies used, and the impact it had.</p>
-              <a href="#" class="project-link">View Project →</a>
-            </div>
-          </article>
-          
-        </div>
-      </div>
+    <!-- WP5: Amphitheater -->
+    <section class="waypoint-overlay" id="wp5">
+      <span class="wp-number">04 / VENTURES</span>
+      <h2 class="wp-section-title">Incubation</h2>
+      <button class="ui-button open-modal-btn" data-modal="projects-modal">[Open Projects]</button>
     </section>
 
-  </main>
+    <!-- WP6: Dawn -->
+    <section class="waypoint-overlay" id="wp6">
+      <span class="wp-number">05 / DAWN</span>
+      <h2 class="wp-section-title">Time to Fly</h2>
+      <a href="mailto:youssefelhajj@example.com" class="ui-button">Initiate Contact</a>
+    </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <h2 class="footer-title">Let's build something extraordinary.</h2>
-        <a href="mailto:youssefelhajj@example.com" class="footer-email">youssefelhajj@example.com</a>
-      </div>
-      <div class="footer-right">
-        <div class="social-links">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Twitter</a>
+  </div>
+
+  <!-- ═══ GLOBAL MODALS ═══ -->
+  
+  <!-- Info Modal (WP2) -->
+  <div class="modal-container" id="info-modal">
+    <div class="modal-bg close-modal-btn"></div>
+    <div class="modal-content">
+      <button class="modal-close close-modal-btn">✕</button>
+      <h2 class="modal-title">Engineering Philosophy</h2>
+      <p class="modal-text">High-performance systems architecture built with C and functional OCaml. Focus on low-level optimization and scalable AI infrastructure.</p>
+    </div>
+  </div>
+
+  <!-- Projects Modal (WP5) -->
+  <div class="modal-container" id="projects-modal">
+    <div class="modal-bg close-modal-btn"></div>
+    <div class="modal-content large-modal">
+      <button class="modal-close close-modal-btn">✕</button>
+      
+      <div class="project-split">
+        <!-- Swipply -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Swipply</h3>
+            <span class="project-role">Solo Founder & Lead Developer</span>
+          </div>
+          <p class="modal-text">Strictly freemium business model framework. Backend feature architecture optimized for rapid scaling and solo pitch presentation infrastructure.</p>
+          <div class="media-placeholder video-placeholder">
+            <span>[16:9 Pitch Video Placeholder]</span>
+          </div>
         </div>
-        <p class="copyright">© 2026 Youssef El Hajj. All rights reserved.</p>
+
+        <div class="vertical-divider"></div>
+
+        <!-- Axiom -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Axiom</h3>
+            <span class="project-role">Mobile Lifestyle Application</span>
+          </div>
+          <p class="modal-text">High-fidelity UI/UX specifications, real-time database requirements, and a closed internal beta testing pipeline via Google Play Console.</p>
+          <div class="media-placeholder mobile-placeholder">
+            <div class="mobile-mock"><span>UI Mock</span></div>
+            <div class="mobile-mock"><span>UI Mock</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <!-- Three.js for High-Fidelity WebGL -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="matrix.js"></script>
+  <!-- ═══ Scroll Spacer ═══ -->
+  <div class="scroll-content" id="scroll-content"></div>
+
+  <!-- ═══ Scripts ═══ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
