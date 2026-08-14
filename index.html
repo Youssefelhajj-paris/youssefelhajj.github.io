@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef El Hajj — Software Engineer</title>
     <meta name="description" content="Software Engineer & AI Developer building at the intersection of systems programming and artificial intelligence.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>λ</text></svg>">
     
+    <!-- JSON-LD SEO Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Youssef El Hajj",
+      "jobTitle": "Software Engineer & AI Developer",
+      "url": "https://youssefelhajj.github.io",
+      "image": "https://youssefelhajj.github.io/assets/images/youssef-elhajj-portrait.jpg",
+      "sameAs": [
+        "https://github.com/Youssefelhajj-paris",
+        "https://linkedin.com/in/youssef-elhajj"
+      ]
+    }
+    </script>
+
     <!-- Premium Fonts: Inter for UI/Body, JetBrains Mono for Code/Tech elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +50,6 @@
         <section class="hero" id="hero">
             <div class="container hero-inner">
                 <p class="eyebrow">$ init --user</p>
-                <!-- data-text drives the scramble animation -->
                 <h1 class="hero-name" id="heroName" data-text="YOUSSEF EL HAJJ">YOUSSEF EL HAJJ</h1>
                 <p class="hero-subtitle" id="heroSubtitle" data-text="Software Engineer & AI Developer">Software Engineer & AI Developer</p>
                 
@@ -87,13 +102,36 @@
                             <span class="stack-chip">Docker</span>
                         </div>
                     </div>
+
+                    <!-- SEO Portrait Image with WebGL Compilation Effect -->
+                    <div class="about-image-wrapper reveal">
+                        <figure class="image-mask prestige-container">
+                            <img 
+                                src="assets/images/youssef-elhajj-portrait.jpg" 
+                                alt="Youssef El Hajj - Software Engineer Portrait" 
+                                class="gl-reveal"
+                                loading="lazy"
+                            >
+                            <figcaption class="image-caption">YOUSSEF EL HAJJ / SYS_ENG</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================== WORK ===================== -->
-        <section class="section" id="work">
-            <div class="container">
+        <section class="section work-section" id="work">
+            <!-- Atmospheric Background Image (Kept subtle, not compiled) -->
+            <div class="work-bg-wrapper">
+                <img 
+                    src="assets/images/youssef-elhajj-lecture.jpg" 
+                    alt="Youssef El Hajj giving a lecture on software engineering" 
+                    class="work-bg-img gl-reveal"
+                    loading="lazy"
+                >
+            </div>
+            
+            <div class="container work-container">
                 <div class="section-head reveal">
                     <p class="eyebrow" data-scramble="$ ls ./projects --detailed">$ ls ./projects --detailed</p>
                     <h2>Selected Work</h2>
@@ -103,6 +141,7 @@
                     <article class="project-card reveal">
                         <div class="project-thumb">
                             <span>Sys</span>
+                            <div class="memory-scan"></div>
                         </div>
                         <div class="project-body">
                             <p class="project-meta">SYSTEMS PROGRAMMING</p>
@@ -117,6 +156,7 @@
                     <article class="project-card reveal">
                         <div class="project-thumb">
                             <span>λ</span>
+                            <div class="memory-scan"></div>
                         </div>
                         <div class="project-body">
                             <p class="project-meta">FUNCTIONAL</p>
@@ -131,6 +171,7 @@
                     <article class="project-card reveal">
                         <div class="project-thumb">
                             <span>AI</span>
+                            <div class="memory-scan"></div>
                         </div>
                         <div class="project-body">
                             <p class="project-meta">INFRASTRUCTURE</p>
@@ -156,12 +197,35 @@
                 <div class="ventures-grid">
                     <div class="venture-card reveal">
                         <div class="venture-top">
-                            <h3 class="venture-title">Swipply</h3>
+                            <div>
+                                <h3 class="venture-title">Swipply</h3>
+                                <p class="venture-role">Solo Founder & Lead Developer</p>
+                            </div>
                             <span class="stage-tag">ACTIVE</span>
                         </div>
                         <p class="venture-desc">
-                            Solo Founder & Lead Developer. A strictly freemium business model framework with a backend feature architecture optimized for rapid scaling. Built with solo pitch presentation infrastructure in mind.
+                            A strictly freemium business model framework with a backend feature architecture optimized for rapid scaling. Built with solo pitch presentation infrastructure in mind.
                         </p>
+                        
+                        <!-- Advanced WebGL Compiled Images -->
+                        <div class="venture-images">
+                            <figure class="venture-img-box prestige-container">
+                                <img 
+                                    src="assets/images/youssef-elhajj-swipply-mentorat.jpg" 
+                                    alt="Youssef El Hajj mentoring for Swipply" 
+                                    class="gl-reveal"
+                                    loading="lazy"
+                                >
+                            </figure>
+                            <figure class="venture-img-box prestige-container">
+                                <img 
+                                    src="assets/images/youssef-elhajj-proposition-valeur.jpg" 
+                                    alt="Youssef El Hajj presenting value proposition" 
+                                    class="gl-reveal"
+                                    loading="lazy"
+                                >
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,25 +262,28 @@
         <span>SYSTEM ONLINE · <span id="clock"></span></span>
     </div>
 
-    <!-- Scramble Text Animation & Scroll Logic -->
+    <!-- WebGL Compiler Script -->
+    <script src="js/gl-compiler.js"></script>
+
+    <!-- AST Scramble Text & Scroll Logic -->
     <script>
         (function () {
             "use strict";
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            /* ---------- Scramble Text Effect ---------- */
-            function ScrambleText(el) {
+            /* ---------- AST Text Parsing Effect ---------- */
+            function ASTParser(el) {
                 this.el = el;
-                // High-tech character set for the scramble
-                this.chars = '!<>-_\\/[]{}=+*^?#01XλΣ◆';
+                // Hex values, pointers, syntax symbols
+                this.chars = '01ABCDEFx&|<>*[]{}=;';
             }
-            ScrambleText.prototype.randomChar = function () {
+            ASTParser.prototype.randomChar = function () {
                 return this.chars[(Math.random() * this.chars.length) | 0];
             };
-            ScrambleText.prototype.play = function (finalText, opts) {
+            ASTParser.prototype.play = function (finalText, opts) {
                 opts = opts || {};
-                const duration = opts.duration || 2500;
-                const minReveal = opts.minReveal || 800;
+                const duration = opts.duration || 1800; // faster, snappier compilation
+                const minReveal = opts.minReveal || 400;
                 const self = this;
 
                 if (reduceMotion) {
@@ -226,7 +293,8 @@
 
                 return new Promise(function (resolve) {
                     const chars = finalText.split('');
-                    const reveals = chars.map(() => minReveal + Math.random() * (duration - minReveal));
+                    // Reveal strictly left to right to mimic a parser reading the string
+                    const reveals = chars.map((_, i) => minReveal + (i * (duration / chars.length)) + (Math.random() * 200));
                     const start = performance.now();
 
                     function frame(now) {
@@ -236,17 +304,25 @@
                         for (let i = 0; i < chars.length; i++) {
                             const ch = chars[i];
                             if (ch === ' ') { out += ' '; continue; }
+                            
                             if (t >= reveals[i]) {
-                                out += ch;
+                                // Add a flash of "syntax highlight" right as it resolves
+                                if (t - reveals[i] < 150) {
+                                    out += '<span class="syntax-flash">' + ch + '</span>';
+                                } else {
+                                    out += ch;
+                                }
                             } else {
                                 done = false;
-                                out += '<span class="scramble-char">' + self.randomChar() + '</span>';
+                                out += '<span class="ast-char">' + self.randomChar() + '</span>';
                             }
                         }
                         self.el.innerHTML = out;
                         if (!done) {
                             requestAnimationFrame(frame);
                         } else {
+                            // Ensure clean HTML at the end
+                            self.el.textContent = finalText;
                             resolve();
                         }
                     }
@@ -254,33 +330,33 @@
                 });
             };
 
-            /* Trigger Hero Scramble on Load */
+            /* Trigger AST Scramble on Load */
             window.addEventListener('DOMContentLoaded', function () {
                 const nameEl = document.getElementById('heroName');
                 const subEl = document.getElementById('heroSubtitle');
                 
                 if (nameEl) {
-                    const nameScrambler = new ScrambleText(nameEl);
-                    nameScrambler.play(nameEl.getAttribute('data-text'), { duration: 2800, minReveal: 1000 });
+                    const nameScrambler = new ASTParser(nameEl);
+                    nameScrambler.play(nameEl.getAttribute('data-text'), { duration: 2200, minReveal: 800 });
                 }
                 
                 if (subEl) {
-                    const subScrambler = new ScrambleText(subEl);
+                    const subScrambler = new ASTParser(subEl);
                     setTimeout(() => {
-                        subScrambler.play(subEl.getAttribute('data-text'), { duration: 2000, minReveal: 600 });
+                        subScrambler.play(subEl.getAttribute('data-text'), { duration: 1500, minReveal: 400 });
                     }, 400);
                 }
             });
 
-            /* Scroll-triggered scramble for section eyebrows */
+            /* Scroll-triggered AST scramble for section eyebrows */
             const eyebrows = document.querySelectorAll('[data-scramble]');
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const el = entry.target;
-                            const scrambler = new ScrambleText(el);
-                            scrambler.play(el.getAttribute('data-scramble'), { duration: 1200, minReveal: 300 });
+                            const scrambler = new ASTParser(el);
+                            scrambler.play(el.getAttribute('data-scramble'), { duration: 1000, minReveal: 200 });
                             observer.unobserve(el);
                         }
                     });
