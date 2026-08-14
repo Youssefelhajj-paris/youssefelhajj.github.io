@@ -23,258 +23,205 @@
     }
     </script>
 
-    <!-- Premium Fonts: Inter for UI/Body, JetBrains Mono for Code/Tech elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="mode-2d"> <!-- Default to standard 2D layout -->
 
-    <!-- Subtle film grain noise overlay for premium texture -->
-    <div class="noise-overlay"></div>
-
+    <!-- Fixed UI Overlay -->
     <nav class="nav">
         <a href="#" class="nav-logo">YOUSSEF<span class="accent">.</span>EL_HAJJ</a>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#ventures">Ventures</a>
-            <a href="#contact" class="btn-outline">Let's Talk</a>
+            <!-- The Mode Toggle -->
+            <button id="modeToggle" class="mode-btn">
+                [ ENABLE 3D SPATIAL MODE ]
+            </button>
+            <span class="status-dot"></span> <span class="status-text">SYSTEM ONLINE</span>
         </div>
     </nav>
 
-    <main id="main">
-        <!-- ===================== HERO ===================== -->
-        <section class="hero" id="hero">
-            <div class="container hero-inner">
-                <p class="eyebrow">$ init --user</p>
-                <h1 class="hero-name" id="heroName" data-text="YOUSSEF EL HAJJ">YOUSSEF EL HAJJ</h1>
-                <p class="hero-subtitle" id="heroSubtitle" data-text="Software Engineer & AI Developer">Software Engineer & AI Developer</p>
-                
-                <p class="hero-tagline">
-                    Building robust, high-performance systems. From low-level C architecture and functional OCaml to scalable AI infrastructure and modern web platforms. 
-                </p>
+    <!-- Scroll proxy for 3D Mode -->
+    <div id="scroll-proxy"></div>
 
-                <div class="hero-actions">
-                    <a href="#work" class="btn btn-primary">Explore Work</a>
-                    <a href="#contact" class="btn btn-ghost">Contact Me</a>
+    <!-- Main Viewport -->
+    <div id="viewport">
+        <!-- The World / Content Container -->
+        <div id="world">
+            
+            <!-- ===================== HERO ===================== -->
+            <section class="section" id="hero" data-z="0">
+                <div class="container hero-inner block-animate">
+                    <p class="eyebrow">$ init --user</p>
+                    <h1 class="hero-name" id="heroName" data-text="YOUSSEF EL HAJJ">YOUSSEF EL HAJJ</h1>
+                    <p class="hero-subtitle" id="heroSubtitle" data-text="Software Engineer & AI Developer">Software Engineer & AI Developer</p>
+                    
+                    <p class="hero-tagline">
+                        Building robust, high-performance systems. From low-level C architecture and functional OCaml to scalable AI infrastructure and modern web platforms. 
+                    </p>
+
+                    <div class="hero-actions">
+                        <span class="scroll-instruction" id="scrollInstruction">[ SCROLL DOWN ]</span>
+                    </div>
                 </div>
+            </section>
 
-                <div class="hero-links">
-                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ GITHUB ]</a>
-                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ LINKEDIN ]</a>
-                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ TWITTER ]</a>
-                </div>
-            </div>
-            <div class="scroll-cue">
-                <span>SCROLL</span>
-                <div class="scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- ===================== ABOUT & TECH STACK ===================== -->
-        <section class="section" id="about">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ cat bio.md">$ cat bio.md</p>
-                    <h2>System Architecture & Logic</h2>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-bio reveal">
+            <!-- ===================== ABOUT ===================== -->
+            <section class="section" id="about" data-z="-3000">
+                <div class="container about-grid">
+                    <div class="about-bio block-animate bio-target">
+                        <div class="section-head">
+                            <p class="eyebrow" data-scramble="$ cat bio.md">$ cat bio.md</p>
+                            <h2>System Architecture</h2>
+                        </div>
                         <p>
                             I am a software engineer focused on building systems that scale and algorithms that solve real problems. I thrive at the intersection of rigid, low-level systems programming and dynamic, high-level AI development.
                         </p>
                         <p>
                             Whether I am optimizing memory in C, writing pure functions in OCaml, or architecting backend services for mobile platforms, my philosophy remains the same: build it clean, make it fast, and ensure it rarely breaks.
                         </p>
-                        
-                        <div class="stack-list">
-                            <span class="stack-chip">C / C++</span>
-                            <span class="stack-chip">OCaml</span>
-                            <span class="stack-chip">Python</span>
-                            <span class="stack-chip">TypeScript</span>
-                            <span class="stack-chip">WebGL / GLSL</span>
-                            <span class="stack-chip">React / Next.js</span>
-                            <span class="stack-chip">PostgreSQL</span>
-                            <span class="stack-chip">Docker</span>
-                        </div>
                     </div>
 
-                    <!-- SEO Portrait Image with WebGL Compilation Effect -->
-                    <div class="about-image-wrapper reveal">
-                        <figure class="image-mask prestige-container">
+                    <!-- SEO Portrait Image -->
+                    <div class="about-image-wrapper block-animate image-target">
+                        <figure class="image-mask">
                             <img 
                                 src="assets/images/youssef-elhajj-portrait.jpg" 
                                 alt="Youssef El Hajj - Software Engineer Portrait" 
-                                class="gl-reveal"
-                                loading="lazy"
+                                class="pristine-img"
                             >
                             <figcaption class="image-caption">YOUSSEF EL HAJJ / SYS_ENG</figcaption>
                         </figure>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- ===================== WORK ===================== -->
-        <section class="section work-section" id="work">
-            <!-- Atmospheric Background Image (Kept subtle, not compiled) -->
-            <div class="work-bg-wrapper">
-                <img 
-                    src="assets/images/youssef-elhajj-lecture.jpg" 
-                    alt="Youssef El Hajj giving a lecture on software engineering" 
-                    class="work-bg-img gl-reveal"
-                    loading="lazy"
-                >
-            </div>
-            
-            <div class="container work-container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ ls ./projects --detailed">$ ls ./projects --detailed</p>
-                    <h2>Selected Work</h2>
+            <!-- ===================== WORK ===================== -->
+            <section class="section work-section" id="work" data-z="-6000">
+                <div class="work-bg-layer block-animate">
+                    <img 
+                        src="assets/images/youssef-elhajj-lecture.jpg" 
+                        alt="Youssef El Hajj giving a lecture" 
+                        class="work-bg-img"
+                    >
+                    <div class="bg-gradient"></div>
                 </div>
+                
+                <div class="container work-container">
+                    <div class="section-head block-animate">
+                        <p class="eyebrow" data-scramble="$ ls ./projects --detailed">$ ls ./projects --detailed</p>
+                        <h2>Selected Work</h2>
+                    </div>
 
-                <div class="work-grid">
-                    <article class="project-card reveal">
-                        <div class="project-thumb">
-                            <span>Sys</span>
-                            <div class="memory-scan"></div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-meta">SYSTEMS PROGRAMMING</p>
-                            <h3 class="project-title">Custom Memory Allocator</h3>
-                            <p class="project-desc">A highly optimized custom `malloc` and `free` implementation in C, featuring segregated free lists and thread-safe operations.</p>
-                            <div class="project-tags">
-                                <span class="tag">C</span><span class="tag">POSIX</span><span class="tag">Valgrind</span>
+                    <div class="work-grid">
+                        <article class="project-card block-animate proj-sys">
+                            <div class="project-body">
+                                <p class="project-meta">SYSTEMS PROGRAMMING</p>
+                                <h3 class="project-title">Custom Memory Allocator</h3>
+                                <p class="project-desc">A highly optimized custom `malloc` and `free` implementation in C, featuring segregated free lists and thread-safe operations.</p>
+                                <div class="project-tags">
+                                    <span class="tag">C</span><span class="tag">POSIX</span><span class="tag">Valgrind</span>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="project-card reveal">
-                        <div class="project-thumb">
-                            <span>λ</span>
-                            <div class="memory-scan"></div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-meta">FUNCTIONAL</p>
-                            <h3 class="project-title">OCaml Compiler Toolchain</h3>
-                            <p class="project-desc">A lightweight compiler front-end written in pure OCaml, translating a subset of ML into optimized intermediate representation.</p>
-                            <div class="project-tags">
-                                <span class="tag">OCaml</span><span class="tag">Menhir</span><span class="tag">LLVM</span>
+                        <article class="project-card block-animate proj-fun">
+                            <div class="project-body">
+                                <p class="project-meta">FUNCTIONAL</p>
+                                <h3 class="project-title">OCaml Compiler Toolchain</h3>
+                                <p class="project-desc">A lightweight compiler front-end written in pure OCaml, translating a subset of ML into optimized intermediate representation.</p>
+                                <div class="project-tags">
+                                    <span class="tag">OCaml</span><span class="tag">Menhir</span><span class="tag">LLVM</span>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="project-card reveal">
-                        <div class="project-thumb">
-                            <span>AI</span>
-                            <div class="memory-scan"></div>
-                        </div>
-                        <div class="project-body">
-                            <p class="project-meta">INFRASTRUCTURE</p>
-                            <h3 class="project-title">Axiom Beta</h3>
-                            <p class="project-desc">A mobile lifestyle application leveraging real-time databases and closed internal beta testing pipelines on Google Play.</p>
-                            <div class="project-tags">
-                                <span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Node.js</span>
+                        <article class="project-card block-animate proj-inf">
+                            <div class="project-body">
+                                <p class="project-meta">INFRASTRUCTURE</p>
+                                <h3 class="project-title">Axiom Beta</h3>
+                                <p class="project-desc">A mobile lifestyle application leveraging real-time databases and closed internal beta testing pipelines on Google Play.</p>
+                                <div class="project-tags">
+                                    <span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Node.js</span>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== VENTURES ===================== -->
-        <section class="section" id="ventures">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ ./ventures.sh">$ ./ventures.sh</p>
-                    <h2>Ventures & Startups</h2>
-                </div>
-
-                <div class="ventures-grid">
-                    <div class="venture-card reveal">
-                        <div class="venture-top">
-                            <div>
-                                <h3 class="venture-title">Swipply</h3>
-                                <p class="venture-role">Solo Founder & Lead Developer</p>
-                            </div>
-                            <span class="stage-tag">ACTIVE</span>
-                        </div>
-                        <p class="venture-desc">
-                            A strictly freemium business model framework with a backend feature architecture optimized for rapid scaling. Built with solo pitch presentation infrastructure in mind.
-                        </p>
-                        
-                        <!-- Advanced WebGL Compiled Images -->
-                        <div class="venture-images">
-                            <figure class="venture-img-box prestige-container">
-                                <img 
-                                    src="assets/images/youssef-elhajj-swipply-mentorat.jpg" 
-                                    alt="Youssef El Hajj mentoring for Swipply" 
-                                    class="gl-reveal"
-                                    loading="lazy"
-                                >
-                            </figure>
-                            <figure class="venture-img-box prestige-container">
-                                <img 
-                                    src="assets/images/youssef-elhajj-proposition-valeur.jpg" 
-                                    alt="Youssef El Hajj presenting value proposition" 
-                                    class="gl-reveal"
-                                    loading="lazy"
-                                >
-                            </figure>
-                        </div>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- ===================== CONTACT ===================== -->
-        <section class="section" id="contact">
-            <div class="container contact-inner">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ ping -c 4 youssef">$ ping -c 4 youssef</p>
-                    <h2>Initiate Contact</h2>
-                    <p>Open to deep technical challenges, systems architecture roles, and visionary AI projects.</p>
+            <!-- ===================== VENTURES ===================== -->
+            <section class="section" id="ventures" data-z="-9000">
+                <div class="container ventures-grid">
+                    <div class="venture-card block-animate vent-text">
+                        <div class="section-head">
+                            <p class="eyebrow" data-scramble="$ ./ventures.sh">$ ./ventures.sh</p>
+                            <h2>Swipply</h2>
+                        </div>
+                        <p class="venture-role">Solo Founder & Lead Developer</p>
+                        <span class="stage-tag">ACTIVE</span>
+                        <p class="venture-desc" style="margin-top: 1.5rem;">
+                            A strictly freemium business model framework with a backend feature architecture optimized for rapid scaling. Built with solo pitch presentation infrastructure in mind.
+                        </p>
+                    </div>
+
+                    <!-- Pristine Floating Images -->
+                    <div class="venture-images">
+                        <figure class="venture-img-box block-animate vent-img-1">
+                            <img 
+                                src="assets/images/youssef-elhajj-swipply-mentorat.jpg" 
+                                alt="Youssef El Hajj mentoring for Swipply" 
+                                class="pristine-img"
+                            >
+                        </figure>
+                        <figure class="venture-img-box block-animate vent-img-2">
+                            <img 
+                                src="assets/images/youssef-elhajj-proposition-valeur.jpg" 
+                                alt="Youssef El Hajj presenting value proposition" 
+                                class="pristine-img"
+                            >
+                        </figure>
+                    </div>
                 </div>
-                <a class="contact-email reveal" href="mailto:youssefelhajj@example.com">youssefelhajj@example.com</a>
+            </section>
 
-                <div class="hero-links reveal" style="margin-top:2.5rem;">
-                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ GITHUB ]</a>
-                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ LINKEDIN ]</a>
-                    <a class="chip-link" href="#" target="_blank" rel="noopener">[ TWITTER ]</a>
+            <!-- ===================== CONTACT ===================== -->
+            <section class="section" id="contact" data-z="-12000">
+                <div class="container contact-inner block-animate">
+                    <div class="section-head">
+                        <p class="eyebrow" data-scramble="$ ping -c 4 youssef">$ ping -c 4 youssef</p>
+                        <h2>Initiate Contact</h2>
+                        <p>Open to deep technical challenges, systems architecture roles, and visionary AI projects.</p>
+                    </div>
+                    <a class="contact-email" href="mailto:youssefelhajj@example.com">youssefelhajj@example.com</a>
+
+                    <div class="hero-links" style="margin-top:2.5rem; justify-content: center;">
+                        <a class="chip-link" href="#" target="_blank">[ GITHUB ]</a>
+                        <a class="chip-link" href="#" target="_blank">[ LINKEDIN ]</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer>
-        <div class="footer-inner">
-            <span>© <span id="year"></span> Youssef El Hajj. Built with precision.</span>
-            <span>Paris, France</span>
-        </div>
-    </footer>
+        </div> <!-- /#world -->
+    </div> <!-- /#viewport -->
 
-    <div class="status-widget">
-        <span class="status-dot"></span>
-        <span>SYSTEM ONLINE · <span id="clock"></span></span>
-    </div>
+    <!-- GSAP for Math & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- WebGL Compiler Script -->
-    <script src="js/gl-compiler.js"></script>
+    <!-- Custom Logic -->
+    <script src="js/scroll-controller.js"></script>
 
-    <!-- AST Scramble Text & Scroll Logic -->
+    <!-- AST Scramble Text Logic -->
     <script>
         (function () {
             "use strict";
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            /* ---------- AST Text Parsing Effect ---------- */
             function ASTParser(el) {
                 this.el = el;
-                // Hex values, pointers, syntax symbols
                 this.chars = '01ABCDEFx&|<>*[]{}=;';
             }
             ASTParser.prototype.randomChar = function () {
@@ -282,7 +229,7 @@
             };
             ASTParser.prototype.play = function (finalText, opts) {
                 opts = opts || {};
-                const duration = opts.duration || 1800; // faster, snappier compilation
+                const duration = opts.duration || 1800;
                 const minReveal = opts.minReveal || 400;
                 const self = this;
 
@@ -293,7 +240,6 @@
 
                 return new Promise(function (resolve) {
                     const chars = finalText.split('');
-                    // Reveal strictly left to right to mimic a parser reading the string
                     const reveals = chars.map((_, i) => minReveal + (i * (duration / chars.length)) + (Math.random() * 200));
                     const start = performance.now();
 
@@ -306,7 +252,6 @@
                             if (ch === ' ') { out += ' '; continue; }
                             
                             if (t >= reveals[i]) {
-                                // Add a flash of "syntax highlight" right as it resolves
                                 if (t - reveals[i] < 150) {
                                     out += '<span class="syntax-flash">' + ch + '</span>';
                                 } else {
@@ -321,7 +266,6 @@
                         if (!done) {
                             requestAnimationFrame(frame);
                         } else {
-                            // Ensure clean HTML at the end
                             self.el.textContent = finalText;
                             resolve();
                         }
@@ -330,7 +274,6 @@
                 });
             };
 
-            /* Trigger AST Scramble on Load */
             window.addEventListener('DOMContentLoaded', function () {
                 const nameEl = document.getElementById('heroName');
                 const subEl = document.getElementById('heroSubtitle');
@@ -348,53 +291,8 @@
                 }
             });
 
-            /* Scroll-triggered AST scramble for section eyebrows */
-            const eyebrows = document.querySelectorAll('[data-scramble]');
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const el = entry.target;
-                            const scrambler = new ASTParser(el);
-                            scrambler.play(el.getAttribute('data-scramble'), { duration: 1000, minReveal: 200 });
-                            observer.unobserve(el);
-                        }
-                    });
-                }, { threshold: 0.8 });
-                eyebrows.forEach(el => observer.observe(el));
-            }
-
-            /* Standard Fade-Up Reveal on Scroll */
-            const revealEls = document.querySelectorAll('.reveal');
-            if ('IntersectionObserver' in window) {
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.15 });
-                revealEls.forEach(el => revealObserver.observe(el));
-            } else {
-                revealEls.forEach(el => el.classList.add('is-visible'));
-            }
-
-            /* Nav blur effect on scroll */
-            const nav = document.querySelector('.nav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            }, { passive: true });
-
-            /* Clock & Year */
-            document.getElementById('year').textContent = new Date().getFullYear();
-            function updateClock() {
-                const el = document.getElementById('clock');
-                if (el) el.textContent = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            }
-            updateClock();
-            setInterval(updateClock, 1000);
+            // Make ASTParser globally available for scroll triggers
+            window.ASTParser = ASTParser;
         })();
     </script>
 </body>
