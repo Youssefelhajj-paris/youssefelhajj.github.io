@@ -1,285 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef El Hajj — Software Engineer</title>
-    <meta name="description" content="Software Engineer & AI Developer building at the intersection of systems programming and artificial intelligence.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>λ</text></svg>">
+    <meta name="description"
+        content="Software Engineer &amp; AI Developer building at the intersection of systems programming and artificial intelligence.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300e5ff'>λ</text></svg>">
 
-    <!-- Premium Fonts: Inter for UI/Body, JetBrains Mono for Code/Tech elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
-<body class="mode-2d">
-    <!-- Subtle film grain noise overlay for premium texture -->
-    <div class="noise-overlay"></div>
+<body>
+    <div class="noise"></div>
 
-    <nav class="nav">
-        <a href="#" class="nav-logo">YOUSSEF<span class="accent">.</span>EL_HAJJ</a>
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav-logo">YOUSSEF<span class="accent">.</span>EL_HAJJ</a>
         <div class="nav-links">
             <a href="#about">Architecture</a>
             <a href="#work">Work</a>
             <a href="#press">Press</a>
-            <a href="#contact" class="btn-outline">Initiate</a>
+            <a href="#contact" class="btn btn-ghost">Initiate</a>
         </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"
+            aria-controls="mobilePanel">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
+    <div class="mobile-panel" id="mobilePanel">
+        <a href="#about"><span>01</span>Architecture</a>
+        <a href="#work"><span>02</span>Work</a>
+        <a href="#press"><span>03</span>Press</a>
+        <a href="#contact"><span>04</span>Initiate</a>
+    </div>
+
     <main id="main">
-        <!-- ===================== HERO ===================== -->
+
+        <!-- ================= HERO ================= -->
         <section class="hero" id="hero">
             <div class="container hero-grid">
-                <div class="hero-content">
+                <div>
                     <p class="eyebrow">$ init --user</p>
-                    <h1 class="hero-name" id="heroName" data-text="YOUSSEF EL HAJJ">YOUSSEF EL HAJJ</h1>
-                    <p class="hero-subtitle" id="heroSubtitle" data-text="Software Engineer & AI Developer">Software Engineer & AI Developer</p>
-
-                    <p class="hero-tagline">
-                        Building robust, high-performance systems. From low-level architecture to scalable AI infrastructure.
-                    </p>
-
+                    <h1 class="hero-name" id="heroName" data-text="Youssef El Hajj">Youssef El Hajj</h1>
+                    <p class="hero-role"><span class="dot"></span>Software Engineer &amp; AI Developer</p>
+                    <p class="hero-tagline">Building robust, high-performance systems — from low-level architecture to
+                        scalable AI infrastructure.</p>
                     <div class="hero-actions">
                         <a href="#work" class="btn btn-primary">Explore Work</a>
-                    </div>
-                </div>
-                
-                <div class="hero-visual">
-                    <div class="portrait-container">
-                        <img src="assets/images/youssef-elhajj-portrait.jpg" alt="Youssef El Hajj" class="hero-portrait">
-                        <div class="portrait-overlay"></div>
+                        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="scroll-cue">
                 <span>SCROLL</span>
                 <div class="scroll-line"></div>
             </div>
         </section>
 
-        <!-- ===================== ARCHITECTURE & STATS ===================== -->
-        <section class="section aura-section" id="about">
+        <!-- ================= ABOUT ================= -->
+        <section class="section" id="about">
             <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ cat stats.log">$ cat stats.log</p>
+
+                <div class="section-inner reveal">
+                    <p class="eyebrow">$ cat stats.log</p>
+                    <div class="stats-grid">
+                        <div class="stat-block">
+                            <div class="stat-number">05</div>
+                            <div class="stat-label">YEARS EXP.</div>
+                            <div class="stat-desc">Deep technical experience.</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">10<span class="accent">+</span></div>
+                            <div class="stat-label">PROJECTS</div>
+                            <div class="stat-desc">Full-stack &amp; AI solutions.</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">04</div>
+                            <div class="stat-label">OFFICIAL WORK</div>
+                            <div class="stat-desc">Major system contributions.</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">06</div>
+                            <div class="stat-label">GOV &amp; PRIVATE</div>
+                            <div class="stat-desc">Built for governments &amp; private sectors.</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-block reveal">
-                        <div class="stat-number">05</div>
-                        <div class="stat-label">YEARS EXP.</div>
-                        <div class="stat-desc">Deep technical experience.</div>
-                    </div>
-                    <div class="stat-block reveal">
-                        <div class="stat-number">10<span class="accent">+</span></div>
-                        <div class="stat-label">PROJECTS</div>
-                        <div class="stat-desc">Full-stack & AI solutions.</div>
-                    </div>
-                    <div class="stat-block reveal">
-                        <div class="stat-number">04</div>
-                        <div class="stat-label">OFFICIAL WORK</div>
-                        <div class="stat-desc">Major system contributions.</div>
-                    </div>
-                    <div class="stat-block reveal">
-                        <div class="stat-number">06</div>
-                        <div class="stat-label">GOV & PRIVATE</div>
-                        <div class="stat-desc">Built for Governments & Private Sectors.</div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Massive Horizontal Roadmap -->
-            <div class="horizontal-aura reveal mt-massive">
-                <div class="container">
-                    <p class="eyebrow" data-scramble="$ trace --path sorbonne">$ trace --path sorbonne</p>
-                </div>
-                <div class="roadmap-track">
-                    <div class="roadmap-item">
-                        <span class="rd-year">[ PREPA ]</span>
-                        <span class="rd-score">16.85</span>
-                        <span class="rd-rank">RANK #1</span>
-                        <span class="rd-honor">JURY CONGRATULATIONS</span>
-                    </div>
-                    <div class="roadmap-item">
-                        <span class="rd-year">[ YEAR 1 ]</span>
-                        <span class="rd-score">15.48</span>
-                        <span class="rd-rank">RANK #4</span>
-                        <span class="rd-honor">BACHELOR IN PROGRESS</span>
-                    </div>
-                    <div class="roadmap-item active-node">
-                        <span class="rd-year">[ YEAR 2 ]</span>
-                        <span class="rd-score">ACTIVE</span>
-                        <span class="rd-rank">EXECUTION PHASE</span>
-                        <span class="rd-honor">SORBONNE UNIVERSITÉ</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Linguistic Matrix Unboxed -->
-            <div class="container mt-massive reveal">
-                <p class="eyebrow" data-scramble="$ get --langs">$ get --langs</p>
-                <div class="massive-text-flow">
-                    <span class="lang-node">FRENCH <span class="accent">C2</span></span> <span class="divider">//</span> 
-                    <span class="lang-node">ENGLISH <span class="accent">C2</span></span> <span class="divider">//</span> 
-                    <span class="lang-node">ARABIC <span class="accent">NATIVE</span></span> <span class="divider">//</span> 
-                    <span class="lang-node">SPANISH <span class="accent">B2</span></span> <span class="divider">//</span> 
-                    <span class="lang-node">RUSSIAN <span class="accent">B1</span></span>
+                <div class="section-inner reveal">
+                    <div class="skills-grid">
+                        <div>
+                            <p class="eyebrow">$ get --langs</p>
+                            <p class="skill-group-label">Languages</p>
+                            <div class="chip-row">
+                                <span class="chip">French <span class="lvl">C2</span></span>
+                                <span class="chip">English <span class="lvl">C2</span></span>
+                                <span class="chip">Arabic <span class="lvl">Native</span></span>
+                                <span class="chip">Spanish <span class="lvl">B2</span></span>
+                                <span class="chip">Russian <span class="lvl">B1</span></span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="eyebrow">$ echo $PATH</p>
+                            <p class="skill-group-label">Technical Stack</p>
+                            <div class="chip-row">
+                                <span class="chip">Python</span>
+                                <span class="chip">JavaScript</span>
+                                <span class="chip">TypeScript</span>
+                                <span class="chip">Dart</span>
+                                <span class="chip">C++</span>
+                                <span class="chip">OCaml</span>
+                                <span class="chip">React</span>
+                                <span class="chip">PostgreSQL</span>
+                                <span class="chip">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            
-            <div class="container mt-section reveal">
-                <p class="eyebrow" data-scramble="$ echo $PATH">$ echo $PATH</p>
-                <div class="massive-text-flow tech-flow">
-                    Python <span class="divider">/</span> JS <span class="divider">/</span> TS <span class="divider">/</span> Dart <span class="divider">/</span> C++ <span class="divider">/</span> OCaml <span class="divider">/</span> React <span class="divider">/</span> PostgreSQL <span class="divider">/</span> Node
+        </section>
+
+        <!-- ================= WORK ================= -->
+        <section class="section" id="work">
+            <div class="container">
+                <div class="section-kicker reveal">
+                    <div>
+                        <p class="eyebrow">$ ls ./projects --detailed</p>
+                        <h2 class="h2">Selected Work</h2>
+                    </div>
+                    <p class="section-num">03 projects</p>
+                </div>
+
+                <div class="work-list">
+
+                    <!-- Prometheus -->
+                    <article class="term-card reveal">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><span></span><span></span><span></span></span>
+                            <span class="term-file">prometheus.dashboard.tsx</span>
+                            <span class="term-tag">01 / FULL-STACK &amp; AI</span>
+                        </div>
+                        <div class="term-body">
+                            <p class="term-meta">ERP &amp; LIFE OPTIMIZATION OS</p>
+                            <h3 class="term-title">Prometheus Dashboard</h3>
+                            <p class="term-desc">A highly complex ERP and life-optimization OS. Real-time e-commerce
+                                arbitrage tracking, an AI-driven profit-prediction engine, voice-to-data entry, and
+                                strict behavioral scheduling.</p>
+                            <div class="term-tags">
+                                <span class="tag">Next.js</span><span class="tag">AI Speech</span><span
+                                    class="tag">PostgreSQL</span><span class="tag">Predictive Algos</span>
+                            </div>
+                        </div>
+                        <div class="term-visual">
+                            <span class="ghost-num">01</span>
+                            <svg viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="pArea" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.28" />
+                                        <stop offset="100%" stop-color="#00e5ff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <g stroke="rgba(255,255,255,0.08)">
+                                    <line x1="0" y1="20" x2="240" y2="20" />
+                                    <line x1="0" y1="60" x2="240" y2="60" />
+                                    <line x1="0" y1="100" x2="240" y2="100" />
+                                </g>
+                                <path
+                                    d="M0,100 L30,90 L60,95 L90,70 L120,75 L150,45 L180,50 L210,20 L240,15 L240,130 L0,130 Z"
+                                    fill="url(#pArea)" />
+                                <polyline points="0,100 30,90 60,95 90,70 120,75 150,45 180,50 210,20 240,15"
+                                    fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="240" cy="15" r="4" fill="#00e5ff" />
+                                <text x="0" y="14" fill="#94a3b8" font-family="JetBrains Mono, monospace"
+                                    font-size="10">PROFIT_INDEX ▲ 24%</text>
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Betcha -->
+                    <article class="term-card reveal">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><span></span><span></span><span></span></span>
+                            <span class="term-file">betcha.social.dart</span>
+                            <span class="term-tag">02 / MOBILE &amp; SOCIAL</span>
+                        </div>
+                        <div class="term-body">
+                            <p class="term-meta">CHALLENGE-BASED SOCIAL NETWORK</p>
+                            <h3 class="term-title">Betcha</h3>
+                            <p class="term-desc">A competitive challenge-based social network. Users upload video proof
+                                of daily real-world "betchas," governed by community-voting algorithms and strict AI
+                                bot-detection systems.</p>
+                            <div class="term-tags">
+                                <span class="tag">Flutter</span><span class="tag">Node.js</span><span class="tag">AI
+                                    Anti-Bot</span>
+                            </div>
+                        </div>
+                        <div class="term-visual">
+                            <span class="ghost-num">02</span>
+                            <svg viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true">
+                                <text x="0" y="12" fill="#94a3b8" font-family="JetBrains Mono, monospace"
+                                    font-size="10">VOTES_VERIFIED</text>
+                                <g font-family="JetBrains Mono, monospace" font-size="9" fill="#64748b">
+                                    <rect x="0" y="26" width="240" height="10" rx="5" fill="rgba(255,255,255,0.06)" />
+                                    <rect x="0" y="26" width="205" height="10" rx="5" fill="#00e5ff" opacity="0.85" />
+                                    <rect x="0" y="52" width="240" height="10" rx="5" fill="rgba(255,255,255,0.06)" />
+                                    <rect x="0" y="52" width="168" height="10" rx="5" fill="#00e5ff" opacity="0.6" />
+                                    <rect x="0" y="78" width="240" height="10" rx="5" fill="rgba(255,255,255,0.06)" />
+                                    <rect x="0" y="78" width="132" height="10" rx="5" fill="#00e5ff" opacity="0.4" />
+                                    <text x="0" y="104" fill="#475569">85% consensus reached</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Axiom -->
+                    <article class="term-card reveal">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><span></span><span></span><span></span></span>
+                            <span class="term-file">axiom.beta.tsx</span>
+                            <span class="term-tag">03 / INFRASTRUCTURE</span>
+                        </div>
+                        <div class="term-body">
+                            <p class="term-meta">MOBILE LIFESTYLE APP</p>
+                            <h3 class="term-title">Axiom Beta</h3>
+                            <p class="term-desc">A mobile lifestyle application leveraging real-time databases and
+                                closed internal beta-testing pipelines on Google Play.</p>
+                            <div class="term-tags">
+                                <span class="tag">TypeScript</span><span class="tag">React Native</span><span
+                                    class="tag">Firebase</span>
+                            </div>
+                        </div>
+                        <div class="term-visual">
+                            <span class="ghost-num">03</span>
+                            <svg viewBox="0 0 140 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                style="max-height:200px">
+                                <rect x="1" y="1" width="138" height="198" rx="18" stroke="rgba(255,255,255,0.14)"
+                                    stroke-width="1.5" />
+                                <circle cx="70" cy="20" r="3" fill="#00e5ff" />
+                                <rect x="16" y="42" width="108" height="34" rx="4" fill="rgba(0,229,255,0.08)"
+                                    stroke="rgba(0,229,255,0.35)" />
+                                <rect x="16" y="86" width="70" height="8" rx="4" fill="rgba(255,255,255,0.1)" />
+                                <rect x="16" y="100" width="108" height="8" rx="4" fill="rgba(255,255,255,0.06)" />
+                                <rect x="16" y="114" width="90" height="8" rx="4" fill="rgba(255,255,255,0.06)" />
+                                <rect x="16" y="140" width="50" height="24" rx="4" fill="rgba(255,255,255,0.05)" />
+                                <rect x="74" y="140" width="50" height="24" rx="4" fill="rgba(255,255,255,0.05)" />
+                                <circle cx="45" cy="182" r="4" fill="#00e5ff" />
+                                <circle cx="70" cy="182" r="4" fill="rgba(255,255,255,0.2)" />
+                                <circle cx="95" cy="182" r="4" fill="rgba(255,255,255,0.2)" />
+                            </svg>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <!-- ===================== WORK (High-End Visuals) ===================== -->
-        <section class="section work-section" id="work">
-            <div class="work-bg-wrapper">
-                <img src="assets/images/youssef-elhajj-lecture.jpg" alt="Lecture" class="work-bg-img" loading="lazy">
-                <div class="work-bg-gradient"></div>
-            </div>
-
-            <div class="container work-container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ ls ./projects --detailed">$ ls ./projects --detailed</p>
-                    <h2 class="massive-h2">Selected Work</h2>
-                </div>
-
-                <div class="editorial-list">
-                    <!-- Project 1: Prometheus -->
-                    <article class="editorial-card reveal">
-                        <div class="ed-content">
-                            <p class="ed-meta">01 // FULL-STACK & AI</p>
-                            <h3 class="ed-title">Prometheus Dashboard</h3>
-                            <p class="ed-desc">A highly complex ERP and Life Optimization OS. Features real-time e-commerce arbitrage tracking, an AI-driven profit prediction engine, voice-to-data entry, and strict behavioral scheduling.</p>
-                            <div class="ed-tags">
-                                <span class="tag">Next.js</span><span class="tag">AI Speech</span><span class="tag">PostgreSQL</span><span class="tag">Predictive Algos</span>
-                            </div>
-                        </div>
-                        <div class="ed-visual abstract-visual">
-                            <!-- Beautiful Abstract CSS Rendering -->
-                            <div class="glass-orb sphere-1"></div>
-                            <div class="glass-orb sphere-2"></div>
-                            <div class="data-lines"></div>
-                        </div>
-                    </article>
-
-                    <!-- Project 2: Betcha -->
-                    <article class="editorial-card reveal">
-                        <div class="ed-content">
-                            <p class="ed-meta">02 // MOBILE & SOCIAL</p>
-                            <h3 class="ed-title">Betcha</h3>
-                            <p class="ed-desc">A competitive challenge-based social network. Users upload video proof of daily real-world "batchas", governed by community voting algorithms and strict AI bot-detection systems.</p>
-                            <div class="ed-tags">
-                                <span class="tag">Flutter</span><span class="tag">Node.js</span><span class="tag">AI Anti-Bot</span>
-                            </div>
-                        </div>
-                        <div class="ed-visual abstract-visual betcha-visual">
-                            <div class="glass-orb cube-1"></div>
-                            <div class="data-lines radial"></div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3: Axiom -->
-                    <article class="editorial-card reveal">
-                        <div class="ed-content">
-                            <p class="ed-meta">03 // INFRASTRUCTURE</p>
-                            <h3 class="ed-title">Axiom Beta</h3>
-                            <p class="ed-desc">A mobile lifestyle application leveraging real-time databases and closed internal beta testing pipelines on Google Play.</p>
-                            <div class="ed-tags">
-                                <span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Firebase</span>
-                            </div>
-                        </div>
-                        <div class="ed-visual abstract-visual axiom-visual">
-                            <div class="glass-orb pyramid-1"></div>
-                            <div class="data-lines horizontal"></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== VENTURES (Unboxed Asymmetric) ===================== -->
+        <!-- ================= VENTURES ================= -->
         <section class="section" id="ventures">
             <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ ./ventures.sh">$ ./ventures.sh</p>
-                    <h2 class="massive-h2">Swipply</h2>
-                    <p class="venture-role">Solo Founder & Lead Developer</p>
-                </div>
-            </div>
+                <p class="eyebrow reveal">$ ./ventures.sh</p>
 
-            <div class="venture-aura-layout reveal">
-                <div class="venture-text-layer container">
-                    <p class="ed-desc massive-desc">
-                        A strictly freemium business model framework with a backend feature architecture optimized for rapid scaling.
-                    </p>
-                </div>
-                
-                <div class="venture-gallery">
-                    <figure class="v-img-frame img-left reveal">
-                        <img src="assets/images/youssef-elhajj-swipply-mentorat.jpg" alt="Pitching for an incubator and SAP Foundation" loading="lazy">
-                        <figcaption class="v-caption">Pitching for an incubator & SAP Foundation</figcaption>
-                    </figure>
-                    <figure class="v-img-frame img-right reveal">
-                        <img src="assets/images/youssef-elhajj-proposition-valeur.jpg" alt="Pitching Swipply in front of investors" loading="lazy">
-                        <figcaption class="v-caption">Pitching Swipply in front of investors</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== PRESS & ARTICLES (Massive Layout) ===================== -->
-        <section class="section press-section" id="press">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow" data-scramble="$ curl --press">$ curl --press</p>
-                </div>
-
-                <div class="press-list">
-                    <a href="https://medium.com/@axiom2284/architecting-a-gamified-lifestyle-os-how-youssef-el-hajj-built-the-axiom-stack-85e297cc81c9" target="_blank" class="press-item reveal">
-                        <div class="press-meta">MEDIUM FEATURE</div>
-                        <h2 class="press-title">Architecting a Gamified Lifestyle OS: How Youssef El Hajj built the Axiom Stack</h2>
-                    </a>
-
-                    <a href="https://enactus.fr/de-l-idee-a-l-impact-grace-aux-coups-de-pouce" target="_blank" class="press-item reveal">
-                        <div class="press-meta">ENACTUS FRANCE</div>
-                        <h2 class="press-title">De l'idée à l'impact grâce aux Coups de Pouce</h2>
-                    </a>
-
-                    <a href="https://medium.com/@youssef_15283/youssef-el-hajj-4723e49656b2" target="_blank" class="press-item reveal">
-                        <div class="press-meta">MEDIUM PROFILE</div>
-                        <h2 class="press-title">Youssef El Hajj: Systems & Infrastructure</h2>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== MASSIVE CONTACT ===================== -->
-        <section class="section contact-section" id="contact">
-            <div class="container">
-                <div class="contact-massive reveal">
-                    <p class="eyebrow" data-scramble="$ ping -c 4 youssef">$ ping -c 4 youssef</p>
-                    <a class="massive-email" href="mailto:youssef@revoluxe.io">youssef@revoluxe.io</a>
-                    
-                    <div class="contact-links mt-massive">
-                        <a href="https://github.com/Youssefelhajj-paris" target="_blank" class="massive-social">GITHUB</a>
-                        <a href="https://linkedin.com/in/youssef-elhajj" target="_blank" class="massive-social">LINKEDIN</a>
-                        <a href="https://instagram.com/youssefelhajj" target="_blank" class="massive-social">INSTAGRAM</a>
+                <div class="venture-head reveal">
+                    <div>
+                        <h2 class="h2">Swipply</h2>
+                        <p class="venture-role">Solo Founder &amp; Lead Developer</p>
                     </div>
+                    <p class="venture-desc">A strictly freemium business-model framework with a backend feature
+                        architecture optimized for rapid scaling.</p>
+                </div>
+
+                <div class="venture-gallery reveal">
+                    <figure>
+                        <div class="figure v-frame">
+                            <img src="assets/images/youssef-elhajj-swipply-mentorat.jpg"
+                                alt="Pitching for an incubator and SAP Foundation" onerror="this.style.display='none'">
+                        </div>
+                        <figcaption class="mono-cap">pitching for an incubator &amp; sap foundation</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="figure v-frame">
+                            <img src="assets/images/youssef-elhajj-proposition-valeur.jpg"
+                                alt="Pitching Swipply in front of investors" onerror="this.style.display='none'">
+                        </div>
+                        <figcaption class="mono-cap">pitching swipply in front of investors</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
+
+        <!-- ================= PRESS ================= -->
+        <section class="section" id="press">
+            <div class="container">
+                <p class="eyebrow reveal">$ curl --press</p>
+
+                <div class="press-list reveal">
+                    <a href="https://medium.com/@axiom2284/architecting-a-gamified-lifestyle-os-how-youssef-el-hajj-built-the-axiom-stack-85e297cc81c9"
+                        target="_blank" rel="noopener" class="press-item">
+                        <div class="press-main">
+                            <p class="press-meta">MEDIUM FEATURE</p>
+                            <h3 class="press-title">Architecting a Gamified Lifestyle OS: How Youssef El Hajj built the
+                                Axiom Stack</h3>
+                        </div>
+                        <svg class="press-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            aria-hidden="true">
+                            <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="https://enactus.fr/de-l-idee-a-l-impact-grace-aux-coups-de-pouce" target="_blank"
+                        rel="noopener" class="press-item">
+                        <div class="press-main">
+                            <p class="press-meta">ENACTUS FRANCE</p>
+                            <h3 class="press-title">De l'idée à l'impact grâce aux Coups de Pouce</h3>
+                        </div>
+                        <svg class="press-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            aria-hidden="true">
+                            <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="https://medium.com/@youssef_15283/youssef-el-hajj-4723e49656b2" target="_blank"
+                        rel="noopener" class="press-item">
+                        <div class="press-main">
+                            <p class="press-meta">MEDIUM PROFILE</p>
+                            <h3 class="press-title">Youssef El Hajj: Systems &amp; Infrastructure</h3>
+                        </div>
+                        <svg class="press-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            aria-hidden="true">
+                            <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section class="section contact-section" id="contact">
+            <div class="container reveal">
+                <p class="eyebrow">$ ping -c 4 youssef</p>
+                <a class="massive-email" href="mailto:youssef@revoluxe.io">youssef@revoluxe.io</a>
+                <p class="contact-sub">4 packets transmitted, 4 received — 0% loss</p>
+
+                <div class="contact-links">
+                    <a href="https://github.com/Youssefelhajj-paris" target="_blank" rel="noopener" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/youssef-elhajj" target="_blank" rel="noopener" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.14V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96V21h-4V9Z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://instagram.com/youssefelhajj" target="_blank" rel="noopener" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16Zm0 1.8c-3.15 0-3.5.01-4.73.07-2.27.1-3.33 1.18-3.43 3.43-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.1 2.24 1.15 3.33 3.43 3.43 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c2.27-.1 3.33-1.18 3.43-3.43.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.1-2.24-1.15-3.33-3.43-3.43C15.5 3.97 15.15 3.96 12 3.96Zm0 3.06a5.18 5.18 0 1 1 0 10.36 5.18 5.18 0 0 1 0-10.36Zm0 1.8a3.38 3.38 0 1 0 0 6.76 3.38 3.38 0 0 0 0-6.76Zm5.4-1.98a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z" />
+                        </svg>
+                        Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container footer-row">
+                <span>© 2026 YOUSSEF EL HAJJ</span>
+                <span>PARIS, FRANCE</span>
+            </div>
+        </footer>
+
     </main>
 
-    <!-- Fixed Status Widget -->
     <div class="status-widget">
         <span class="status-dot"></span>
         <span>SYSTEM ONLINE · <span id="clock"></span></span>
@@ -288,108 +402,74 @@
     <script>
         (function () {
             "use strict";
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            function ASTParser(el) {
-                this.el = el;
-                this.chars = '01ABCDEFx&|<>*[]{}=;';
-            }
-            ASTParser.prototype.randomChar = function () {
-                return this.chars[(Math.random() * this.chars.length) | 0];
-            };
-            ASTParser.prototype.play = function (finalText, opts) {
-                opts = opts || {};
-                const duration = opts.duration || 1800; 
-                const minReveal = opts.minReveal || 400;
-                const self = this;
-
-                if (reduceMotion) {
-                    self.el.textContent = finalText;
-                    return Promise.resolve();
-                }
-
-                return new Promise(function (resolve) {
-                    const chars = finalText.split('');
-                    const reveals = chars.map((_, i) => minReveal + (i * (duration / chars.length)) + (Math.random() * 200));
-                    const start = performance.now();
-
-                    function frame(now) {
-                        const t = now - start;
-                        let done = true;
-                        let out = '';
-                        for (let i = 0; i < chars.length; i++) {
-                            const ch = chars[i];
-                            if (ch === ' ') { out += ' '; continue; }
-
-                            if (t >= reveals[i]) {
-                                if (t - reveals[i] < 150) {
-                                    out += '<span class="syntax-flash">' + ch + '</span>';
-                                } else {
-                                    out += ch;
-                                }
-                            } else {
-                                done = false;
-                                out += '<span class="ast-char">' + self.randomChar() + '</span>';
-                            }
-                        }
-                        self.el.innerHTML = out;
-                        if (!done) {
-                            requestAnimationFrame(frame);
-                        } else {
-                            self.el.textContent = finalText;
-                            resolve();
-                        }
-                    }
-                    requestAnimationFrame(frame);
+            /* ---- hero scramble: one orchestrated load moment ---- */
+            function scramble(el, finalText, duration) {
+                if (reduceMotion) { el.textContent = finalText; return; }
+                var chars = '01ABCDEFx&|<>*[]{}=;';
+                var letters = finalText.split('');
+                var reveals = letters.map(function (_, i) {
+                    return 300 + i * (duration / letters.length) + Math.random() * 160;
                 });
-            };
-
-            // Play on load for Hero elements
+                var start = performance.now();
+                function frame(now) {
+                    var t = now - start, done = true, out = '';
+                    for (var i = 0; i < letters.length; i++) {
+                        var ch = letters[i];
+                        if (ch === ' ') { out += ' '; continue; }
+                        if (t >= reveals[i]) { out += ch; }
+                        else { done = false; out += '<span style="color:var(--text-mute)">' + chars[(Math.random() * chars.length) | 0] + '</span>'; }
+                    }
+                    el.innerHTML = out;
+                    if (!done) requestAnimationFrame(frame); else el.textContent = finalText;
+                }
+                requestAnimationFrame(frame);
+            }
             window.addEventListener('DOMContentLoaded', function () {
-                const nameEl = document.getElementById('heroName');
-                const subEl = document.getElementById('heroSubtitle');
-                
-                if (nameEl) {
-                    const nameScrambler = new ASTParser(nameEl);
-                    nameScrambler.play(nameEl.getAttribute('data-text'), { duration: 2200, minReveal: 800 });
-                }
-                if (subEl) {
-                    const subScrambler = new ASTParser(subEl);
-                    setTimeout(() => {
-                        subScrambler.play(subEl.getAttribute('data-text'), { duration: 1500, minReveal: 400 });
-                    }, 400);
-                }
+                var nameEl = document.getElementById('heroName');
+                if (nameEl) scramble(nameEl, nameEl.getAttribute('data-text'), 1200);
             });
 
-            // Intersection Observer for .reveal fade-ins
-            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+            /* ---- scroll reveal ---- */
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        
-                        const eyebrow = entry.target.querySelector('[data-scramble]');
-                        if (eyebrow && !eyebrow.hasAttribute('data-parsed')) {
-                            eyebrow.setAttribute('data-parsed', 'true');
-                            new ASTParser(eyebrow).play(eyebrow.getAttribute('data-scramble'), { duration: 1000, minReveal: 200 });
-                        }
-                        
-                        if (entry.target.hasAttribute('data-scramble') && !entry.target.hasAttribute('data-parsed')) {
-                            entry.target.setAttribute('data-parsed', 'true');
-                            new ASTParser(entry.target).play(entry.target.getAttribute('data-scramble'), { duration: 1000, minReveal: 200 });
-                        }
-
-                        observer.unobserve(entry.target);
+                        io.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-            document.querySelectorAll('.reveal, .eyebrow[data-scramble]').forEach(el => {
-                observer.observe(el);
+            /* ---- nav scrolled state ---- */
+            var nav = document.getElementById('nav');
+            function onScroll() {
+                if (window.scrollY > 12) nav.classList.add('is-scrolled');
+                else nav.classList.remove('is-scrolled');
+            }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            /* ---- mobile menu ---- */
+            var toggle = document.getElementById('navToggle');
+            var panel = document.getElementById('mobilePanel');
+            function closeMenu() {
+                nav.classList.remove('is-open');
+                panel.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            toggle.addEventListener('click', function () {
+                var open = panel.classList.toggle('is-open');
+                nav.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
             });
+            panel.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+            window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
+            /* ---- clock ---- */
             function updateClock() {
-                const el = document.getElementById('clock');
+                var el = document.getElementById('clock');
                 if (el) el.textContent = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
             }
             updateClock();
@@ -397,4 +477,5 @@
         })();
     </script>
 </body>
+
 </html>
